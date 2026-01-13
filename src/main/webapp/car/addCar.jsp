@@ -10,10 +10,10 @@
 <a href="/car">Car</a>
 
 <form action="/addCar" method="post">
-    <input type="text" name="brand" placeholder="Brand"><br>
-    <input type="text" name="model" placeholder="Model"><br>
-    <input type="number" name="year" placeholder="Year"><br>
-    <input type="number" name="dailyRate" placeholder="Dail Rate"><br>
+    <input type="text" required name="brand" placeholder="Brand"><br>
+    <input type="text" required name="model" placeholder="Model"><br>
+    <input type="number" required name="year" placeholder="Year"><br>
+    <input type="number" required name="dailyRate" placeholder="Dail Rate"><br>
     <input type="radio" required checked name="status" id="free" value="<%=Status.FREE%>">
     <label for="free">Free</label>
     <input type="radio" name="status" id="rental" value="<%=Status.RENTAL%>">

@@ -16,7 +16,7 @@
 <a href="/rental">Back to Rental</a>
 
 <form action="/addRental" method="post">
-    <select name="car_id">
+    <select name="car_id" required>
         <% for (Car car : carList) {%>
             <% if(car.getStatus() == Status.RENTAL) {%>
                 <option disabled value="<%=car.getId()%>"><%=car.getBrand()%></option>
@@ -25,13 +25,13 @@
             <%}%>
         <%}%>
     </select><br>
-    <select name="customer_id">
+    <select name="customer_id" required>
         <% for (Customer customer : customerList) {%>
             <option value="<%=customer.getId()%>"><%=customer.getName()%></option>
         <%}%>
     </select><br>
-    <input type="date" name="start_date" placeholder="start-day"><br>
-    <input type="date" name="end_date" placeholder="end-day"><br>
+    <input type="date" required name="start_date" placeholder="start-day"><br>
+    <input type="date" required name="end_date" placeholder="end-day"><br>
     <input type="submit" value="Add Rental">
 </form>
 

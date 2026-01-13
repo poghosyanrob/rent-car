@@ -9,11 +9,11 @@
 <a href="/customer">Back to Customer</a>
 
 <form action="/addCustomer" method="post">
-    <input type="text" name="name" placeholder="Name"><br>
-    <input type="text" name="surname" placeholder="Surname"><br>
-    <input type="text" name="licenseNumber" placeholder="License Number"><br>
-    <input type="tel" name="phone" placeholder="Phone"><br>
-    <input type="email" name="email" placeholder="Email"><br>
+    <input type="text" required name="name" placeholder="Name"><br>
+    <input type="text" required name="surname" placeholder="Surname"><br>
+    <input type="text" required name="licenseNumber" placeholder="License Number"><br>
+    <input type="tel" required name="phone" placeholder="Phone"><br>
+    <input type="email"  required name="email" placeholder="Email"><br>
     <input type="submit" value="Add Customer">
 </form>
 
