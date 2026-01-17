@@ -5,7 +5,7 @@ import am.example.rentcar.model.Rental;
 import am.example.rentcar.service.CarService;
 import am.example.rentcar.service.CustomerService;
 import am.example.rentcar.service.RentalService;
-import am.example.rentcar.statusEnam.Status;
+import am.example.rentcar.model.statusEnam.Status;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -27,7 +27,7 @@ public class ChangeRentalServlet extends HttpServlet {
         req.setAttribute("rental", rentalService.getRentalById(id));
         req.setAttribute("customer", customerService.getAllCustomer());
         req.setAttribute("car", carService.getAllCar());
-        req.getRequestDispatcher("/rental/changeRental.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/rental/changeRental.jsp").forward(req, resp);
 
     }
 

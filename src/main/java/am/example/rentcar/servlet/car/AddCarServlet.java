@@ -2,7 +2,7 @@ package am.example.rentcar.servlet.car;
 
 import am.example.rentcar.model.Car;
 import am.example.rentcar.service.CarService;
-import am.example.rentcar.statusEnam.Status;
+import am.example.rentcar.model.statusEnam.Status;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -17,7 +17,7 @@ public class AddCarServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("/car/addCar.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/car/addCar.jsp").forward(req, resp);
     }
 
     @Override

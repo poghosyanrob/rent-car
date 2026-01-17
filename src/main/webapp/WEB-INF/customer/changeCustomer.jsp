@@ -3,12 +3,15 @@
 <html>
 <head>
     <title>Change Customer</title>
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
+<div class="card form-card">
 <% Customer customer = (Customer) request.getAttribute("customer"); %>
 
-<h1>Change Customer data</h1>
-<a href="/" > Back to Rent Car</a><br>
+
+    <a href="/" class="back-link">← Home</a>
+    <h1>Change Customer data</h1>
 <a href="/customer"> Back to Customer</a>
 
 <form action="/changeCustomer" method="post">
@@ -18,8 +21,8 @@
     <input type="text" required name="licenseNumber" value="<%=customer.getLicenseNumber()%>" ><br>
     <input type="tel" required name="phone" value="<%=customer.getPhone()%>"><br>
     <input type="email" required name="email" value="<%=customer.getEmail()%>"><br>
-    <input type="submit" value="Change Customer">
+    <input type="submit" value="Change Customer" class="btn">
 </form>
-
+</div>
 </body>
 </html>

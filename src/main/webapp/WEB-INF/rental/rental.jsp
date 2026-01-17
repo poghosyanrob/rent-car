@@ -1,18 +1,23 @@
 <%@ page import="java.util.List" %>
 <%@ page import="am.example.rentcar.model.Rental" %>
+<%@ page import="am.example.rentcar.model.User" %>
+<%@ page import="am.example.rentcar.model.statusEnam.UserRole" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Rental</title>
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
 <% List<Rental> rentalList = (List<Rental>) request.getAttribute("rental");%>
+<%User user = (User) session.getAttribute("user");%>
+<div class="card">
+    <a href="/" class="back-link">← Home</a>
+    <h1>Car rental</h1>
+    <a href="/addRental" class="btn" style="margin-bottom: 20px;">+ Add New Rental</a>
 
-<h1>Car rental</h1>
-<a href="/"> Back to Rent Car</a><br>
-<a href="/addRental">Add Rental</a>
 
-<table  border="1px solid" style="border-collapse: collapse">
+<table>
     <tr>
         <th>Id</th>
         <th>Car</th>
@@ -21,7 +26,9 @@
         <th>End rental</th>
         <th>Total cost</th>
         <th>Status</th>
+        <% if(user.getRole() == UserRole.ADMIN){%>
         <th>Action</th>
+        <%}%>
     </tr>
     <% for (Rental rental : rentalList) {%>
     <tr>
@@ -32,12 +39,14 @@
         <td><%=rental.getEndDate()%></td>
         <td><%=rental.getTotalCost()%></td>
         <td><%=rental.getStatus()%></td>
-        <td><a href="/deleteRental?id=<%=rental.getId()%>">delete</a>  |  <a href="/changeRental?id=<%=rental.getId()%>">Change</a> </td>
+        <% if(user.getRole() == UserRole.ADMIN){%>
+        <td><a href="/deleteRental?id=<%=rental.getId()%>">delete</a>  |  <a href="/changeRental?id=<%=rental.getId()%>">Edit</a> </td>
+        <%}%>
     </tr>
     <%}%>
 </table>
 
-
+</div>
 
 </body>
 </html>

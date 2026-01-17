@@ -20,6 +20,6 @@ public class SearchCarServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         List<Car> carList = carService.getAllCar();
         req.setAttribute("car", carList);
-        req.getRequestDispatcher("/search/searchCar.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/search/searchCar.jsp").forward(req, resp);
     }
 }

@@ -18,8 +18,10 @@ public class CustomerServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+
         List<Customer> customerList = customerService.getAllCustomer();
         req.setAttribute("customer", customerList);
-        req.getRequestDispatcher("/customer/customer.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/customer/customer.jsp").forward(req, resp);
+
     }
 }

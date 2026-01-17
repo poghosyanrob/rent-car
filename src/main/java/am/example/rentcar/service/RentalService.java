@@ -2,7 +2,7 @@ package am.example.rentcar.service;
 
 import am.example.rentcar.db.BDConnectionProvider;
 import am.example.rentcar.model.Rental;
-import am.example.rentcar.statusEnam.Status;
+import am.example.rentcar.model.statusEnam.Status;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

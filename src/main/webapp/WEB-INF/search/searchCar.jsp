@@ -1,18 +1,21 @@
 <%@ page import="am.example.rentcar.model.Car" %>
 <%@ page import="java.util.List" %>
-<%@ page import="am.example.rentcar.statusEnam.Status" %>
+<%@ page import="am.example.rentcar.model.statusEnam.Status" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Search Cars</title>
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
 <% List<Car> carList = (List<Car>) request.getAttribute("car");%>
+<div class="card">
 
+<a href="/" class="back-link">← Home</a>
 <h1>That Cars which are free</h1>
-<a href="/">Back to Rent Car</a><br>
 
-<table  border="1px solid" style="border-collapse: collapse">
+
+<table>
     <tr>
         <th>Id</th>
         <th>Brand</th>
@@ -32,6 +35,6 @@
     <%}%>
     <%}%>
 </table>
-
+</div>
 </body>
 </html>

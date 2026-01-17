@@ -5,7 +5,7 @@ import am.example.rentcar.model.Rental;
 import am.example.rentcar.service.CarService;
 import am.example.rentcar.service.CustomerService;
 import am.example.rentcar.service.RentalService;
-import am.example.rentcar.statusEnam.Status;
+import am.example.rentcar.model.statusEnam.Status;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -25,7 +25,7 @@ public class AddRentalServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         req.setAttribute("customer", customerService.getAllCustomer());
         req.setAttribute("car", carService.getAllCar());
-        req.getRequestDispatcher("/rental/addRental.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/rental/addRental.jsp").forward(req, resp);
     }
 
     @Override

@@ -3,7 +3,7 @@ package am.example.rentcar.servlet.rental;
 import am.example.rentcar.model.Car;
 import am.example.rentcar.service.CarService;
 import am.example.rentcar.service.RentalService;
-import am.example.rentcar.statusEnam.Status;
+import am.example.rentcar.model.statusEnam.Status;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;

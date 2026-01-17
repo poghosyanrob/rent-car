@@ -2,7 +2,7 @@ package am.example.rentcar.servlet.car;
 
 import am.example.rentcar.model.Car;
 import am.example.rentcar.service.CarService;
-import am.example.rentcar.statusEnam.Status;
+import am.example.rentcar.model.statusEnam.Status;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
@@ -20,7 +20,7 @@ public class ChangeCarServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int id = Integer.parseInt(req.getParameter("id"));
         req.setAttribute("car", carService.getCarById(id));
-        req.getRequestDispatcher("/car/changeCar.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/car/changeCar.jsp").forward(req, resp);
     }
 
     @Override

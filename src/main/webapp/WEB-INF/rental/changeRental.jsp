@@ -2,19 +2,21 @@
 <%@ page import="am.example.rentcar.model.Car" %>
 <%@ page import="java.util.List" %>
 <%@ page import="am.example.rentcar.model.Customer" %>
-<%@ page import="am.example.rentcar.statusEnam.Status" %>
+<%@ page import="am.example.rentcar.model.statusEnam.Status" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Change Rental</title>
+    <link href="../css/style.css" rel="stylesheet">
 </head>
 <body>
+<div class="card form-card">
 <% Rental rental = (Rental) request.getAttribute("rental");%>
 <% List<Car> carList = (List<Car>) request.getAttribute("car");%>
 <% List<Customer> customerList = (List<Customer>) request.getAttribute("customer"); %>
 
+    <a href="/" class="back-link">← Home</a>
 <h1>Change Rental data</h1>
-<a href="/">Back to Rent car</a>
 <a href="/rental">Back to rental</a>
 
 <form action="/changeRental" method="post">
@@ -47,8 +49,8 @@
     </select><br>
     <input type="date" required name="start_date" value="<%=rental.getStartDate()%>"><br>
     <input type="date" required name="end_date" value="<%=rental.getEndDate()%>"><br>
-    <input type="submit" value="Change Rental">
+    <input type="submit" value="Change Rental" class="btn">
 </form>
-
+</div>
 </body>
 </html>
